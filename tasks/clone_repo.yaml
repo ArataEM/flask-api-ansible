@@ -1,3 +1,9 @@
+  - name: Install required packages
+    apt:
+      name:
+        - git
+      state: present
+  
   - name: Upload SSH key for Github
     copy:
       src: "keys/github"
