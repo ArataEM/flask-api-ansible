@@ -1,0 +1,15 @@
+- hosts: web_servers
+  gather_facts: true
+
+  tasks:
+  - name: Upgrade packages
+    become: true
+    apt:
+      upgrade: yes
+      update_cache: yes
+
+  - import_tasks: tasks/install_docker.yaml
+    become: true
+  - import_tasks: tasks/clone_repo.yaml
+  - import_tasks: tasks/run_app.yaml
+

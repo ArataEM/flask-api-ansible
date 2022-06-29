@@ -1,0 +1,8 @@
+  - name: Tear down existing services
+    community.docker.docker_compose:
+      project_src: "~/flask-api"
+      state: absent
+
+  - name: Create and start services
+    community.docker.docker_compose:
+      project_src: "~/flask-api"
