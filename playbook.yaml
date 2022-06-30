@@ -1,6 +1,4 @@
-- hosts: web_servers
-  vars_files:
-    - vars/web_servers.yaml
+- hosts: _web_server
   gather_facts: true
 
   tasks:
