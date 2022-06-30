@@ -1,4 +1,5 @@
   - name: Install required packages
+    become: true
     apt:
       name:
         - git
@@ -6,8 +7,8 @@
   
   - name: Upload SSH key for Github
     copy:
-      src: "keys/github"
-      dest: "~/.ssh/github"
+      src: "{{ github_key_local_location }}"
+      dest: "{{ github_key_remote_location }}"
       mode: "0600"
       force: yes
 
@@ -18,15 +19,15 @@
 
   - name: Clone repository
     git:
-      repo: git@github.com:ArataEM/flask-api.git
-      dest: "~/flask-api"
-      key_file: "~/.ssh/github"
+      repo: "{{ project_repo }}"
+      dest: "{{ project_remote_location }}"
+      key_file: "{{ github_key_remote_location }}"
       accept_newhostkey: yes
       clone: yes
 
   - name: Copy .env to remote
     copy:
-      src: ".env"
-      dest: "~/flask-api"
+      src: "files/.env"
+      dest: "{{ project_remote_location }}"
       mode: "0600"
       force: yes

@@ -1,4 +1,6 @@
 - hosts: web_servers
+  vars_files:
+    - vars/web_servers.yaml
   gather_facts: true
 
   tasks:
@@ -12,4 +14,3 @@
     become: true
   - import_tasks: tasks/clone_repo.yaml
   - import_tasks: tasks/run_app.yaml
-

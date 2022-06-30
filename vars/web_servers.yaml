@@ -1,0 +1,5 @@
+github_key_local_location: "~/.ssh/id_ed25519"
+github_key_remote_location: "~/.ssh/github"
+
+project_repo: "git@github.com:ArataEM/flask-api.git"
+project_remote_location: "~/flask-api"
