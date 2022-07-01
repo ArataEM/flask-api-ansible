@@ -6,3 +6,7 @@ github_key_remote_location: "~/.ssh/github"
 
 project_repo: "git@github.com:ArataEM/flask-api.git"
 project_remote_location: "~/flask-api"
+
+rds_user: "devops"
+rds_pass: "devops123"
+rds_host: "flask-api-db.cq0sv58dx2n2.eu-central-1.rds.amazonaws.com"
