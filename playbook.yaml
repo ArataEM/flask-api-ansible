@@ -10,5 +10,5 @@
 
   - import_tasks: tasks/install_docker.yaml
     become: true
-  - import_tasks: tasks/clone_repo.yaml
-  - import_tasks: tasks/run_app.yaml
+  #- import_tasks: tasks/clone_repo.yaml
+  #- import_tasks: tasks/run_app.yaml
